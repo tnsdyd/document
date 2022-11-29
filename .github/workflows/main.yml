@@ -1,8 +1,7 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: GitHub Actions example
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Example_github_actions:
     runs-on: ubuntu-latest
     steps:
       - run: |
