@@ -1,0 +1,45 @@
+name: scp test
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+
+jobs:           
+  containertest:
+    runs-on: ubuntu-latest
+    container:
+      image: mm0820/ant_test:0.1
+    steps: 
+    - name: test
+      run: |
+        echo $JAVA_HOME
+    - uses: actions/checkout@v3
+    - name: test2
+      run: |
+        ls -al
+  scp:
+    name: scp
+    runs-on: ubuntu-latest
+    container:
+      image: debian:11
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run a multi-line script
+      run: |
+        ls -al
+        mkdir ../build
+        cp *.md ../build
+        tar -cvf deploy3.tar ../build/
+        ls -al
+    - uses: appleboy/scp-action@master
+      with:
+        host: 13.209.5.210
+        username: Administrator
+        password: ${{ secrets.PASSWORD4 }}
+        port: 22
+        source:  deploy3.tar
+        target: c:/inetpub
