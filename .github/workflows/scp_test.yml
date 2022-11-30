@@ -36,5 +36,5 @@ jobs:
       run: |
         #bash ssh.sh
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
-        #'sshpass -p $TEST scp README.md Administrator@43.201.68.155:c:/'
+        sshpass -p $TEST scp README.md Administrator@43.201.68.155:c:/
       
