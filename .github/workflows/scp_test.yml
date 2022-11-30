@@ -1,4 +1,4 @@
-name: scp test
+name: scp test ubuntu
 
 on:
   workflow_dispatch:
@@ -42,4 +42,4 @@ jobs:
         key: ${{ secrets.KEY }}
         port: 22
         source:  ./deploy3.tar
-        target: 'c:/'
+        target: /home/ubuntu
