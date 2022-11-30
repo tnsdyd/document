@@ -41,5 +41,5 @@ jobs:
         username: Administrator
         password: ${{ secrets.PASSWORD4 }}
         port: 22
-        source:  deploy3.tar
-        target: c:/inetpub
+        source:  ./deploy3.tar
+        target: 'c:/'
