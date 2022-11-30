@@ -33,6 +33,7 @@ jobs:
         TEST: ${{ secrets.PASSWORD4 }}
     - name: secrets test
       run: |
+        rm -rf ~/.ssh/*
         bash ssh.sh
         
       
