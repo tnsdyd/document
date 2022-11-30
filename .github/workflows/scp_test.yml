@@ -33,6 +33,7 @@ jobs:
         TEST: ${{ secrets.PASSWORD4 }}
     - name: secrets test
       run: |
-        bash ssh.sh
-        
+        #bash ssh.sh
+        sshpass -p $PASSWORD4 ssh -o StrictHostKeyChecking=no Administrator@43.201.68.155 dir
+        sshpass -p $PASSWORD4 scp README.md Administrator@43.201.68.155:c:/
       
