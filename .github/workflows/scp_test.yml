@@ -30,7 +30,7 @@ jobs:
     - uses: actions/checkout@v3
       name: Run a multi-line script
       env:
-        test: ${{ secret.PASSWORD4 }}
+        test: ${{ secrets.PASSWORD4 }}
         script: |
           echo $test
         
