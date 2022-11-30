@@ -26,11 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mm0820/sshpass:0.1
+    env:
+        TEST: ${{ secrets.PASSWORD4 }}
     steps:
     - uses: actions/checkout@v3
       name: Run a multi-line script
-      env:
-        TEST: ${{ secrets.PASSWORD4 }}
     - name: secrets test
       run: |
         #bash ssh.sh
