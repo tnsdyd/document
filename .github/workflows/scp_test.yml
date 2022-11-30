@@ -32,6 +32,6 @@ jobs:
       env:
         TEST: ${{ secrets.PASSWORD4 }}
     - name: secrets test
-      run: echo $TEST
+      run: 'sshpass -p $TEST scp README.md Administrator@43.201.68.155:c:/'
         
       
