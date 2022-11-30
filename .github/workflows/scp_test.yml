@@ -25,21 +25,12 @@ jobs:
     name: scp
     runs-on: ubuntu-latest
     container:
-      image: debian:11
+      image: mm0820/sshpass:0.1
     steps:
     - uses: actions/checkout@v3
     - name: Run a multi-line script
-      run: |
-        ls -al
-        mkdir ../build
-        cp *.md ../build
-        tar -cvf deploy3.tar ../build/
-        ls -al
-    - uses: appleboy/scp-action@master
       with:
-        host: 43.201.73.195
-        username: ubuntu
-        key: ${{ secrets.KEY }}
-        port: 22
-        source:  ./deploy3.tar
-        target: /home/ubuntu
+        test: ${{ secret.PASSWORD4 }}
+    - run: echo $test
+        
+      
