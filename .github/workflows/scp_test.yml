@@ -31,7 +31,8 @@ jobs:
       name: Run a multi-line script
       env:
         test: ${{ secrets.PASSWORD4 }}
-        script: |
-          echo $test
+    - name: secrets test
+      run: |
+        echo $test
         
       
